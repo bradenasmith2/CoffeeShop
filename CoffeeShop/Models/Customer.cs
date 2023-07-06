@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeeShop.Models
+namespace CoffeeShop
 {
     public class Customer
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public List<Order> Orders { get; set; }
 
@@ -17,9 +18,8 @@ namespace CoffeeShop.Models
             Orders = new List<Order>();
         }
 
-        public void AddOrder(Order order, Item item)
+        public void AddOrder(Order order)
         {
-            order.AddItem(item);
             Orders.Add(order);
         }
 
@@ -35,8 +35,6 @@ namespace CoffeeShop.Models
             {
                 total = item.PriceInDollars() + total;
             }
-
-            Math.Round(total, 2);
             return total;
         }
     }

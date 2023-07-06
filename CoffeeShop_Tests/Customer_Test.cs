@@ -1,11 +1,29 @@
-namespace CoffeeShop_Tests
+
+namespace CoffeeShop
 {
-    public class UnitTest1
+    public class Customer_Test
     {
         [Fact]
-        public void Test1()
+        public void Customer_Constructor_SetsProperValue()
+        {
+            Customer customer = new("John Doe");
+            List<Order> orders = new List<Order>();
+
+            Assert.Empty(orders);
+            Assert.Equal("John Doe", customer.Name);
+
+        }
+
+        public void AddOrder_AddsProperOrderToList()
         {
 
         }
+
+        public void ItemsOrdered_SelectsDistinctItemsInListOfOrders()
+        {
+
+        }
+
+
     }
 }

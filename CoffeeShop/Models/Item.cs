@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeeShop.Models
+namespace CoffeeShop
 {
     public class Item
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public int PriceInCents { get; set; }
 
@@ -19,12 +20,7 @@ namespace CoffeeShop.Models
 
         public Double PriceInDollars()
         {
-            Double priceInDollars;
-            Convert.ToDouble(PriceInCents);
-            priceInDollars = PriceInCents / 100;
-
-            Math.Round(priceInDollars, 2);
-            return priceInDollars;
+            return Convert.ToDouble(PriceInCents) / 100;
         }
     }
 }
