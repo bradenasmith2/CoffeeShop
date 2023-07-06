@@ -8,7 +8,12 @@ namespace CoffeeShop.Models
 {
     public class Order
     {
-        public List<Item> Items = new List<Item>();
+        public List<Item> Items;
+
+        public Order()
+        {
+            Items = new List<Item>();
+        }
 
         public void AddItem(Item item)
         {
@@ -24,6 +29,11 @@ namespace CoffeeShop.Models
             }
             Math.Round(Total, 2);
             return Total;
+        }
+
+        public string ItemsList()
+        {
+            return string.Join(", ", Items);
         }
     }
 }
